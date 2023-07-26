@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather+Sans&display=swap');
+
+:root {
+    --light-gray: #C8C8C8;
+    --dark-gray: #808080;
+    --green: #0DCE57;
+    --red: #FF2828;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin: 0;
+    background-image: linear-gradient(#4397bb, #325b69, #0F2027);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    width: 100vw;
+    font-family: 'Merriweather Sans', sans-serif;
+}
+
+.calculator-container {
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    width: 27rem;
+}
+
+.calculator-display {
+    display: flex;
+    justify-content: flex-end;
+    
+    position: relative;
+    background-color: black;
+    color: white;
+}
+.answer {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0.6rem;
+    margin-right: 0.9rem;
+}
+
+.buttons-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+
+    height: 21rem;
+    padding: 0.5rem;
+}
+.equal {
+    grid-row-start: 3;
+    grid-row-end: 6;
+    grid-column-start: 4;
+    grid-column-end: 5;
+}
+.delete {
+    grid-row-start: 2;
+    grid-row-end: 3;
+    grid-column-start: 4;
+    grid-column-end: 5;
+}
+
+.numbers-display {
+    display: flex;
+    align-items: center;
+
+    height: 7rem;
+    padding: 1.5rem 0.9rem;
+    padding-bottom: 0.5rem;
+    padding-top: 2.5rem;
+    margin: 0;
+}
+.box {
+    width: 0.13rem;
+    height: 2.5rem;
+}
+.flash {
+    background-color: white;
+}
+
+button {
+    margin: 0.3rem;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    font-family: 'Merriweather Sans', sans-serif;
+    font-size: 1.2rem;
+}
+
+.operator,
+.delete {
+    background-color: var(--dark-gray);
+    color: white;
+    font-size: 1.4rem;
+}
+.number,
+.point {
+    background-color: var(--light-gray);
+}
+.set {
+    background-color: var(--red);
+    color: white;
+}
+.equal {
+    background-color: var(--green);
+    color: white;
+    font-size: 1.4rem;
+}
+
+
+/* SCROLL-BARS */
+.scroll-content {
+    overflow-x: auto;
+}
+.scroll-content::-webkit-scrollbar {
+    /*width: 10px;  Mostly for vertical scrollbars */
+    height: 10px;  /*Mostly for horizontal scrollbars */
+}
+.scroll-content::-webkit-scrollbar-thumb { /* Foreground */
+    border-radius: 10px;
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    background-color: rgba(46, 46, 46, 0.8);
+}
+.scroll-content::-webkit-scrollbar-track { /* Background */
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.4);
+    border-radius: 10px;
+    background-color: rgba(221, 221, 221, 0.6);
+    margin-right: 5px;
+}
